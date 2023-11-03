@@ -1,0 +1,390 @@
+DAY-01: 11-09-2023
+
+GIT:
+
+
+APPLICATION: it is combination of services.
+its a software.
+
+GIT: GLOBAL INFROMATION TRACKER
+VCS: version control system.
+SCM: source code management.
+
+VCS: it will store each version code seperately.
+
+PAYTM:
+V1 -- > 3 SERVICES -- > 300 LINES (REPO-1)
+V2 -- > 4 SERVICES -- > 400 LINES (REPO-2)
+V3 -- > 5 SERVICES -- > 500 LINES (REPO-3)
+
+WHY TO MAINTAIN CODE SEPERATELY:
+ROLLBACK: GOING BACK TO PREVIOUS VERSION
+
+V1 -- > INDEX.HTML -- > 100
+V2 -- > INDEX.HTML -- > 110
+V3 -- > INDEX.HTML -- > 140
+
+GIT:
+Git is used to track the files.
+It will maintain multiple versions of the same file.
+It is platform-independent.
+It is free and open-source.
+They can handle larger projects efficiently.
+It is 3rd generation of vcs.
+it is written on c programming.
+it came on the year 2005.
+
+
+CVCS: CENTRALIZED VERSION CONTROL SYSTEM
+we can store code on single repo.
+EX: svn
+
+DVCS: DISTRIBUTED VERSION CONTROL SYSTEM
+we can store code on multiple repos.
+EX: Git
+
+GIT ARCHITECTURE:
+we have 3 stages
+
+1. WORKING DIRECTORY: where we write code.
+2. STAGING AREA: where we track code.
+3. REPOSITORY: where we store tacked code.
+
+
+WORKING:
+create an ec2 instance
+
+mkdir insta
+cd insta
+
+yum install git -y	: to install git
+git init		: to set local repo (.git)
+
+Note: without .git we cant run any commands of git
+
+touch file1		: to create a file
+git add file1		: to track file
+git commit -m "ver-1" file1 : to save the tracked file
+git status		: to see status of file
+git log			: to see commits history
+git log --oneline	: to see commits history in single line
+
+HISTORY:
+ 1  mkdir insta
+    2  cd insta/
+    3  yum install git -y
+    4  ll -a
+    5  git init
+    6  ll -a
+    7  touch file1
+    8  git status
+    9  git add file1
+   10  git status
+   11  git commit -m "ver-1" file1
+   12  ll
+   13  git status
+   14  touch index.html
+   15  git add index.html
+   16  git commit -m "v-1" index.html
+   17  touch file2
+   18  git status
+   19  git add file2
+   20  git status
+   21  git commit -m "abc" file2
+   22  ll
+   23  git status
+   24  git log
+   25  git log --oneline
+   26  history
+====================================================
+DAY-02: 12-09-2023
+BRANCHES, GITHUB
+
+BRANCHES:
+its an individual line of development.
+each developer will write the code on different branches.
+the default branch in git is master.
+we can do pull, push and fetch activies with branches.
+NOTE: if we want to see a branch we need to do inital commit.
+
+git branch		: to list branches
+git branch branch_name	: to create new branche
+git checkout branch_name: to switch blw branches
+git checkout -b dth	: to create and switch at same time
+
+create branch -- > create files -- > add -- > commit
+
+GITHUB:
+its a remote repo.
+we can store source code on internet.
+if we delete code on local we can get from github.
+we can merge code of multiple developers.
+
+ 1  mkdir paytm
+    2  cd paytm/
+    3  yum install git -y
+    4  ll -a
+    5  git status
+    6  git init
+    7  ll -a
+    8  git status
+    9  ll
+   10  ll -
+   11  ll -a
+   12  git branch
+   13  vim index.html
+   14  git add index.html
+   15  git status
+   16  git commit -m "v-1" index.html
+   17  git branch
+   18  git branch movies
+   19  git branch
+   20  git checkout movies
+   21  git branch
+   22  touch movies{1..5}
+   23  git add movies*
+   24  git commit -m "dev-1" movies*
+   25  ll
+   26  git branch train
+   27  git checkout train
+   28  ll
+   29  touch train{1..5}
+   30  git add train*
+   31  git commit -m "dev-2" train*
+   32  git branch
+   33  git checkout -b dth
+   34  git branch
+   35  ll
+   36  touch dth{1..5}
+   37  git add dth*
+   38  git commit -m "dev-3" dth*
+   39  git checkout -b recharge
+   40  ll
+   41  touch recharge{1..5}
+   42  git add recharge*
+   43  git commit -m "dev-4" recharge*
+   44  git checkout master
+   45  ll
+   46  git checkout -b raham
+   47  ll
+   48*
+   49  ll -a
+   50  git checkout master
+   51  ll
+   52  git push origin master
+   53  git push origin movies
+   54  git push origin train
+   55  git push origin dth
+   56  git push origin recharge
+   57  cd
+   58  ll
+   59  rm -rf paytm/
+   60  ll
+   61  git clone https://github.com/raghavamakkena86/paytm.git
+   62  ll
+   63  cd paytm/
+   64  ll
+   65  git checkout movies
+   66  ll
+   67  git checkout train
+   68  ll
+   69  git checkout dth
+   70  ll
+   71  history
+=======================================================================================
+DAY-03: 13-09-2023
+
+MERGE, REBASE, MERGE VS REBASE, REVERT, PULL, PUSH, FETCH, CLONE, FORK
+
+MERGE:
+it is used to copy files blw branches
+in branch-1 we have 5 files, branch-2 10 files 
+git checkout master
+git merge movies 
+
+REBASE: 
+it is used to copy file blw branches
+git rebase master
+git merge movies 
+
+MERGE VS REBASE:
+merge we use public repos, privare repose rebase
+merege will store history, rebase will not store entire history
+merge will show files, rebase will not show files
+
+
+REVERT: 
+to undo the merging blw branches.
+after revert the files will be deleted.
+git revert branch_name
+
+
+Git Clone:
+used to dowload the reposiotory from github to local.
+the repo must be pulic.
+
+git clone repo_url
+
+GIT FORK: 
+used to dowload the reposiotory from github to github.
+the repo must be pulic.
+user-1 (repo-a) user-2 (repo-a)
+
+GIT PULL:
+push 	: local  -- > github
+pull	: github -- > local
+
+to get changes from github to git.
+git pull orgin master
+
+GIT FECTH:
+to show changes from github to git.
+git fetch orgin master
+
+git branch -D branch_name	: to delete a branch
+git pull origin branch_name	: to restore a branch
+git branch -m old new		: to rename a branch
+
+HISTORY:
+  1  mkdir paytm
+    2  cd paytm/
+    3  yum install git -y
+    4  git init
+    5  touch index.html
+    6  git add index.html
+    7  git commit -m "v-1" index.html
+    8  git branch
+    9  git branch master
+   10  git branch movies
+   11  git branch
+   12  git checkout movies
+   13  ll
+   14  touch movies{1..5}
+   15  git add movies*
+   16  git commit -m "dev-1" movies*
+   17  git branch train
+   18  git checkout train
+   19  ll
+   20  touch train{1..5}
+   21  git add train*
+   22  git commit -m "dev-2" train*
+   23  git checkout -b dth
+   24  touch dth{1..5}
+   25  git add dth*
+   26  git commit -m "dev-3" dth*
+   27  git checkout -b recharge
+   28  tocuh recharge{1..5}
+   29  touch recharge{1..5}
+   30  git add recharge*
+   31  git commit -m "dev-4" recharge*
+   32  git remote add origin https://github.com/devopsbyraham/paytmrepo.git
+   33  git push origin master
+   34  git push origin movies
+   35  git push origin train
+   36  git push origin dth
+   37  git push origin recharge
+   38  git branch
+   39  git checkout master
+   40  ll
+   41  git merge movies
+   42  ll
+   43  git merge train
+   44  ll
+   45  git rebase dth
+   46  ll
+   47*
+   48  ll
+   49  git revert recharge
+   50  ll
+   51  git revert dth
+   52  ll
+   53  git revert train
+   54  ll
+   55  git branch
+   56  cd
+   57  ll
+   58  rm -rf *
+   59  ll
+   60  git clone https://github.com/devopsbyraham/paytmrepo.git
+   61  ll
+   62  cd paytmrepo/
+   63  ll
+   64  git branch
+   65  git checkout movies
+   66  ll
+   67  git checkout train
+   68  ll
+   69  git checkout dth
+   70  git checkout recharge
+   71  ll
+   72  git branch
+   73  git checkout master
+   74  ll
+   75  cat index.html
+   76  git pull origin master
+   77  cat index.html
+   78*
+   79  cat index.html
+   80  git pull origin master
+   81  git fetch origin master:master
+   82  git fetch origin master
+   83  cat index.html
+   84  git fetch origin master
+   85  cat index.html
+   86  git fetch
+   87  git branch
+   88  git branch -D master
+   89  git branch -D train
+   90  git branch
+   91  git pull origin train
+   92  git branch
+   93  git checkout train
+   94  ll
+   95  git branch
+   96  git branch -m train raham
+   97  git branch
+   98  git branch -m raham train
+   99  git branch
+  100  history
+
+========================================================
+DAY-04: 14-09-2023
+
+MERGE CONFLICT:
+when we merge 2 diffrent branches with same file and different code conflcits will occur.
+how to resolve: manually
+
+git log 
+git log --oneline
+git log --oneline -2
+
+git show: used to show the files attached for commits.
+git show commit_id
+
+USER CONFIGURE:
+git config user.name "raham"
+git config user.email "raham@gmail.com"
+
+CHERRY-PICK:
+it will merge the specific files from one branch to another
+we use commit id to merge the files.
+git cherry-pick commit_id
+
+
+STASH: 
+it will hide the files temperorly.
+it will applicable for tracked files.
+we should not apply stash for commited.
+
+git stash 
+git stash list
+git stash apply
+git stash clear
+git stash pop
+
+
+.GITIGNORE: 
+we can add the files which we dont want to track or commit.
+vim .gitignore
+php*
+
