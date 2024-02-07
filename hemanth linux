@@ -36,6 +36,8 @@ mkdir raham	: to create a folder
 cd raham	: to go to raham folder
 pwd		: print working directory
 cd ..		: to come back one folder
+rm -rf hemanth/ : to delete the directory (empty or non empty)
+rm * -rf : to delete everything files and directories.
 
 =========================================================================
 
