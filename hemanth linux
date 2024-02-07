@@ -120,6 +120,15 @@ others	:r-- : 4
 NUMERICAL: chmod 766 file1
 ALPHABETICAL: chmod u=rwx,g=rx,o=w file1
 
+{
+mkdir dir1 -> touch hemanth
+create a directory dir1 in the dir1 create a file. (cd .. come to root folder)
+to link that file in the directory named abc which will create automatically even if the file does n't exists.
+
+ln -s dir1/hemanth abc : link the file to a directory file
+
+}
+
 USER: 
 to login to server
 default user when we login to server ec2-user
@@ -145,16 +154,6 @@ chown raham file1	: to make raham as owner for file1
 chgrp raham file1	: to make raham as group for file1
 chown raham:raham file1	: to attach onwer and group both
 
-
-
-{
-mkdir dir1 -> touch hemanth
-create a directory dir1 in the dir1 create a file. (cd .. come to root folder)
-to link that file in the directory named abc which will create automatically even if the file does n't exists.
-
-ln -s dir1/hemanth abc : link the file to a directory file
-
-}
 
 TYPES:
 DEFAULT: user used to login to server
