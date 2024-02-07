@@ -17,6 +17,7 @@ cat>>file1	: to insert the content
 enter ctrl d	: to save the content
 wc		: to show number of lines, words and charcters
 cp file1 file2	: to copy the content from file1 to file2
+cp hemanth/abc tempfde : to copy the content from a file in a directory to another directory.(#####)
 mv file1 file5	: to rename a file and to move
 rm file1	: to remove file
 rm file1 -f	: to remove file forecfully
