@@ -95,7 +95,6 @@ lshw			: to print complete hardware information
 yum install lshw -y
 
 cat file1>>file2
-ln -s dir1/raham abc
 =====================================================================================
 PERMISSIONS:
 
