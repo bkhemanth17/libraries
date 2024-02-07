@@ -145,7 +145,7 @@ su - raham		: to login as raham user
 ctrl d			: to logout
 groupadd devops		: to create devops group
 usermod -a -G devops raham: to add raham user to devops group
-gpasswd -d raham devops	: to remove raham user to devops group
+gpasswd -d raham linux	: to remove raham user to linux group
 id raham		: to show raham user details
 userdel raham		: to delete raham user
 groupdel aws		: to delete aws group
