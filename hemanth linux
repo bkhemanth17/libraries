@@ -150,9 +150,9 @@ id raham		: to show raham user details
 userdel raham		: to delete raham user
 groupdel aws		: to delete aws group
 
-chown raham file1	: to make raham as owner for file1
-chgrp raham file1	: to make raham as group for file1
-chown raham:raham file1	: to attach onwer and group both
+chown subhash file1	: to make subhash as owner for file1
+chgrp subhash file1	: to make subhash as group for file1
+chown subhash:subhash file1	: to attach onwer and group both
 
 
 TYPES:
