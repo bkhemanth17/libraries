@@ -163,6 +163,13 @@ SUDO USER: normal user who is in sudo file
 
 create user -- > visudo -- > 100 -- >yy p -- > name -- > save
 
+{
+useradd tempusr1 (first check he is a normal user [go to cat /etc/passwd] -> they are just created and no permissions)
+go to visudo file in line num 100 :100 (in insert mode press yy and p (root) under root add tempusr1)
+
+he will become sudo user just like root he will get all permissions.
+}
+
 ====================================================================================
 
 GREP: GLOBAL REGULAR EXPRESSION PRINT
